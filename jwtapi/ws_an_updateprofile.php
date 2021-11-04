@@ -12,7 +12,7 @@
 	$email=$data->email;
 	$lastname=$data->lastname;
 	$uid=$data->uid;
-	]
+	
 	$sql="UPDATE `userstab` SET  `name`='$name',`lastname`='$lastname',`email`='$email' WHERE `unique_id`='$uid' ";
 	$stmt = $db->runQuery($sql);
 	$stmt->execute();

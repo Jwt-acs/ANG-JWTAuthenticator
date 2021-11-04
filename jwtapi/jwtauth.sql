@@ -43,10 +43,6 @@ CREATE TABLE IF NOT EXISTS `userstab` (
 -- Dumping data for table `userstab`
 --
 
-INSERT INTO `userstab` (`user_id`, `unique_id`, `name`, `lastname`, `email`, `encrypted_password`, `created_at`, `updated_at`, `auth`, `deviceuniqID`) VALUES
-(1, '5c3781b4ef9cb6.00155574', 'testuser', '', 'testuser@gmail.com', 'e99a18c428cb38d5f260853678922e03', '2021-11-03 17:49:32', '2021-11-03 17:49:32', 'yes', '6021619695ddc8.12168436'),
-(2, '5c3781b4ef9cb6.00158874', 'testuser', '', 'testlogin@gmail.com', 'e99a18c428cb38d5f260853678922e03', '2021-11-03 17:50:12', '2021-11-03 17:50:12', 'no', ''),
-(3, '6183ef9f7bc364.48187525', '', '', 'praveen.gollu@gmail.com', 'e99a18c428cb38d5f260853678922e03', '2021-11-04 10:35:11', '2021-11-04 10:35:11', 'no', '');
 
 --
 -- Indexes for dumped tables

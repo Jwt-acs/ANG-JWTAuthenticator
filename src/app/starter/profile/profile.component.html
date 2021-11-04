@@ -51,6 +51,19 @@
                     </div>
                 </div>
                 <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" style="float: right;" (click)="update()"
+                            class="btn btn-info pull-right">Update</button>
+                    </div>
+                    <div class="col-sm-4">
+                        
+                    </div>
+
+                </div>
+                <br>
                 <div *ngIf="auth ==='no'">
                     <div class="row">
                         <div class="col-sm-3"></div>
@@ -77,10 +90,13 @@
                 <div *ngIf="auth ==='yes'">
                     <div class="row">
                         <div class="col-sm-3"></div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <input type="checkbox" (change)="selectauth()" checked> Activate Authenticator
-                            <button type="button" style="float: right;" (click)="noauth()"
-                                class="btn btn-info pull-right">Remove</button>
+                           
+                        </div>
+                        <div class="col-sm-3"> 
+                            <button type="button" (click)="noauth()"
+                            class="btn btn-info pull-right">Remove</button>
                         </div>
 
                     </div>
