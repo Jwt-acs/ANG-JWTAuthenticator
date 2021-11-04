@@ -1,0 +1,68 @@
+<body class="hold-transition login-page">
+  <div class="login-logo">
+    <a><img src="assets/images11/jwtlogo.webp" width="100px" height="100px" /></a>
+  </div>
+  <h1>JWT Authenticator Usage Sample Application</h1>
+  <div class="login-box">
+    
+    
+    <div class="card" *ngIf="myform">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+        <form login='loginForm'>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" name="email" ngModel #emailref="ngModel"
+              [(ngModel)]='username' [ngModelOptions]="{standalone:true}">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+            <br>
+          </div>
+          <div *ngIf="emailref.errors &&(emailref.touched || emailref.dirty)"
+            class="alert alert-danger alert-dismissible">
+            <div [hidden]="!emailref.errors?.pattern">
+              Invalid pattern
+            </div>
+          </div>
+          <div class="input-group mb-3">
+
+            <input type="password" class="form-control" placeholder="Password" [(ngModel)]='password'
+              [ngModelOptions]="{standalone:true}">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <a href="#" routerLink="/register" class="text-center">Register</a>
+     
+            <button type="button" class="btn btn-primary btn-block" (click)='ValidateUser()'>Sign In</button>
+
+          </div>
+        </form>
+      </div>
+    </div>
+    <div *ngIf="mybutton">
+      <div class="card">
+        <div class="card-body login-card-body">
+          <p class="login-box-msg">JwtAuthentication Verification</p>
+          <form login='loginForm'>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="code" [(ngModel)]='authcode'
+                [ngModelOptions]="{standalone:true}">
+              <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <br>
+          <div class="col-xs-4">
+            
+            <button type="button" data-toggle="modal" data-target="#feedback" id="addMemberModalBtn"
+              class="btn btn-primary btn-block btn-flat" (click)='confirm()'>Submit</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

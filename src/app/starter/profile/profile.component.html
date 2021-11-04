@@ -1,0 +1,92 @@
+<div class="row" style="margin-top:20px">
+   <div class="col-sm-3">
+    </div>
+    <div class="col-sm-6">
+        <div class="login-logo">
+            <a><img src="assets/images11/jwtlogo.webp" width="100px" height="100px" /></a>
+          </div>
+        <h1>JWT Authenticator</h1>
+        <div class="card">
+            <div class="card-body login-card-body">
+                <div class="row">
+                    <div class="col-sm-8">
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" style="float: right;" (click)="logout()"
+                            class="btn btn-info pull-right">logout</button>
+                    </div>
+
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-3">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="Name" placeholder="Name" [(ngModel)]="username"
+                            [ngModelOptions]="{standalone:true}">
+                    </div>
+                    <div class="col-sm-5">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-3">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="LastName" placeholder="Last Name"
+                            [(ngModel)]="lastname" [ngModelOptions]="{standalone:true}">
+                    </div>
+                    <div class="col-sm-5">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-3">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="Email" placeholder="Email" [(ngModel)]="email"
+                            [ngModelOptions]="{standalone:true}">
+                    </div>
+                    <div class="col-sm-5">
+                    </div>
+                </div>
+                <br>
+                <div *ngIf="auth ==='no'">
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <label class="control-label">
+                            <input type="checkbox" (change)="activateauth()"> Activate Authenticator
+                        </label>
+                    </div>
+                    <br>
+                    <div class="form-group" *ngIf="showauth">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="inputSkills" class="control-label">Authenticator Number</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" name="state" required=""
+                                    [(ngModel)]="authnumber" [ngModelOptions]="{standalone:true}">
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="button" (click)="getuniq()" class="btn btn-info">Sync</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="auth ==='yes'">
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-3">
+                            <input type="checkbox" (change)="selectauth()" checked> Activate Authenticator
+                            <button type="button" style="float: right;" (click)="noauth()"
+                                class="btn btn-info pull-right">Remove</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+        </div>
+    </div>
