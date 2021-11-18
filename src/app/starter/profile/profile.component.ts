@@ -48,36 +48,30 @@ export class ProfileComponent implements OnInit {
     );
   }
  getuniq(){
-    if(this.authnumber != null ){
-      
+  
+     var applicationname='JWTAuthenticator'; 
 
-    this.loginService.getdeviceuniqid(this.authnumber).subscribe(
+    this.loginService.getdeviceuniqid(this.email,applicationname).subscribe(
       success=>{
       this.profRes =success
       console.log(this.profRes);
       for (let key of this.profRes) {
         console.log("object:", key);
          this.successMessage=key.msg;
-        this.authnumbers=key.deviceuniqid
+        this.authnumbers=key.appUniqeID;
           }
-            if(this.successMessage ==='match'){
+         
               this.updateauth();
               sessionStorage.setItem('auth','yes')
-              this.auth=sessionStorage.getItem('auth');
-            }
-            else{
-            swal('Authenticator Number doesnot match');
-            }
+            
     
 
       });
-    }else{
-      swal('Please Enter Authenticator Number ');
-    }
+   
   }
   updateauth(){
     debugger;
-    if(this.authnumber != null ){
+  
       var q=2;
 
     this.loginService.authdata(this.uid,this.authnumbers,q).subscribe(
@@ -86,9 +80,7 @@ export class ProfileComponent implements OnInit {
       swal(success);
      
       });
-    }else{
-      swal('Please Enter Authenticator Number');
-    }
+   
   }
   selectauth(){
 

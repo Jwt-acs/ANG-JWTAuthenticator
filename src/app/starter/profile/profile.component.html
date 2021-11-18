@@ -70,22 +70,12 @@
                         <label class="control-label">
                             <input type="checkbox" (change)="activateauth()"> Activate Authenticator
                         </label>
-                    </div>
-                    <br>
-                    <div class="form-group" *ngIf="showauth">
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <label for="inputSkills" class="control-label">Authenticator Number</label>
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" name="state" required=""
-                                    [(ngModel)]="authnumber" [ngModelOptions]="{standalone:true}">
-                            </div>
-                            <div class="col-sm-3">
-                                <button type="button" (click)="getuniq()" class="btn btn-info">Sync</button>
-                            </div>
+                        <div class="col-sm-3" *ngIf="showauth">
+                            <button type="button" (click)="getuniq()" class="btn btn-info">Send Barcode</button>
                         </div>
                     </div>
+                    <br>
+                   
                 </div>
                 <div *ngIf="auth ==='yes'">
                     <div class="row">

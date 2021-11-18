@@ -72,14 +72,14 @@ export class LoginServiceService {
       catchError(this.handleError));*/
   }
 
-  getdeviceuniqid(authnumber: string) {
+  getdeviceuniqid(email: string,applicationname:String) {
     var headers = new Headers();
     headers.append("Content-Type", "application/X-www-form=urlencoded");
     debugger;
     //let options = new RequestOptions({ header: headers });
-    let body = JSON.stringify({ authnumber: authnumber });
+    let body = JSON.stringify({ email: email,appname:applicationname });
 
-    return this.http.post(AppSettings.AUTH_URL + "/ws_getUniqueID.php", body);
+    return this.http.post(AppSettings.AUTH_URL + "ws_getAppUniqID.php", body);
     //.catch(this._errorhandler);
   }
 
