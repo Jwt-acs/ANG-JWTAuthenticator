@@ -2,7 +2,7 @@ export class AppSettings {
   furl :any;
   static getUrl() {
 
-    this.furl = 'http://localhost/jwtapi'; 
+    this.furl = 'https://jwtauth.jwtechinc.com/test/api'; 
     //throw new Error("Method not implemented.");
     return this.furl
   }

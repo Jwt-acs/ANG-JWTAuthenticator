@@ -16,8 +16,11 @@
 	$sql="INSERT INTO `userstab`(`unique_id`, `name`,`lastname`,`email`, `encrypted_password`,`auth`) VALUES ('$uid','$name','$lastname','$email','$pass','no')";
 	$stmt = $db->runQuery($sql);
 	$stmt->execute();
+	if($stmt === TRUE){
 	echo json_encode('register Successfully');
 	 
-    }
+    }else{
+		echo json_encode(' User already exists');
+	}
 ?>
 

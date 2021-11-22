@@ -68,7 +68,19 @@ export class LoginComponent implements OnInit {
       // this.router.navigateByUrl['/dashboard']
   
   }
-   
+  sendcode(){
+    var applicationname='JWTAuthenticator'; 
+    this.loginService.sendcode(this.username,applicationname).subscribe(res => {
+      this.users=res
+      swal({
+        title: "Sorry?",
+        text: "Please check email for QRcode",
+        icon: "success",
+        
+      });
+     
+    })
+  } 
   
   confirm(){
     var q = 2;

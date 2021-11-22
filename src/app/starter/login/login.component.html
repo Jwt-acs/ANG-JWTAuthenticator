@@ -35,11 +35,15 @@
               </div>
             </div>
           </div>
+          <div class="row">
           <div class="col-4">
             <a href="#" routerLink="/register" class="text-center">Register</a>
-     
             <button type="button" class="btn btn-primary btn-block" (click)='ValidateUser()'>Sign In</button>
-
+          </div>
+          <div class="col-8">
+            <a href="https://jwtauth.jwtechinc.com/userguide/help.php" style="float:right"  target="_blank" class="text-center">Help ?</a>
+           
+          </div>
           </div>
         </form>
       </div>
@@ -56,8 +60,8 @@
             </div>
             <br>
           <div class="col-xs-4">
-            
-            <button type="button" data-toggle="modal" data-target="#feedback" id="addMemberModalBtn"
+            <button type="button" class="btn btn-link" (click)='sendcode()'>resendcode</button>
+          <button type="button" data-toggle="modal" data-target="#feedback" id="addMemberModalBtn"
               class="btn btn-primary btn-block btn-flat" (click)='confirm()'>Submit</button>
           </div>
           </form>

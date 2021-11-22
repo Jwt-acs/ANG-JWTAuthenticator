@@ -26,6 +26,21 @@ export class LoginServiceService {
       }),
       catchError(this.handleError));*/
   }
+  sendcode(username: string, applicationname: string) {
+    var headers = new Headers();
+    headers.append("Content-Type", "application/X-www-form=urlencoded");
+    let body = JSON.stringify({ email: username, appname: applicationname });
+    debugger;
+    return this.http.post(
+      AppSettings.AUTH_URL + "/ws_getAppUniqID.php",
+      body
+    ); /*.pipe(
+        map((res) => {
+          this.users=res['data'];
+          return this.users;
+      }),
+      catchError(this.handleError));*/
+  }
   registeruser(
     username: string,
     userlastname: string,
